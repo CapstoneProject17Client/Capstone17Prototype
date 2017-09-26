@@ -7,7 +7,7 @@ using UnityEngine;
  * 
  * Author: 		Dongwon(Shawn) Kim
  * Date(Cr): 	2017-09-18
- * Date(Mo):	2017-09-18 
+ * Date(Mo):	2017-09-19 
  * Reference:	
  * http://answers.unity3d.com/questions/718778/trying-to-create-a-grid.html
  * https://docs.unity3d.com/Manual/InstantiatingPrefabs.html
@@ -32,26 +32,33 @@ public class GridCreation : MonoBehaviour {
 	 **/
 	void CreateGrid(){
 
-		Debug.Log (cellPrefab.localScale.x +", " + cellPrefab.localScale.z);
+//		Debug.Log (cellPrefab.localScale.x +", " + cellPrefab.localScale.z);
 
 		for(int x = 0; x < size.x; x++){
 			for(int z = 0; z < size.z; z++){
-				Instantiate(cellPrefab, new Vector3(x + (cellPrefab.localScale.x * x)*10,
-													0,
-													z + (cellPrefab.localScale.z * z)*10),
-													Quaternion.identity);
-				
+
 				//getting random number for zone( its temporally used for prototype)
 				cellPrefab.GetChild (0).GetComponent<TextMesh> ().text = (Random.Range (0, 4)).ToString();
-
 				cellPrefab.GetChild (1).GetComponent<TextMesh> ().text = "(" + x + ", " + z + ")";
-
 
 				//set color index to GridColor to color the grid
 				cellPrefab.GetComponent<GridColor> ().colorIndex = int.Parse(cellPrefab.GetChild (0).GetComponent<TextMesh> ().text);
 
+				//Creating each cell of grid
+				Instantiate(cellPrefab, 
+							new Vector3(x + (cellPrefab.localScale.x * x)*10,
+											0,
+											z + (cellPrefab.localScale.z * z)*10),
+							Quaternion.identity);
 			}
 		}
+	}
+
+	void SetCoordinate(){
+	}
+
+	void SetZone() {
+		
 	}
 
 }

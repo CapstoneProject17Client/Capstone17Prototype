@@ -24,10 +24,10 @@ public class GridColor : MonoBehaviour {
 
 
 	public Color32[] colors = {			// the set of color gonna be use
-		Color.grey,
-		Color.red,
-		Color.yellow,
-		Color.green
+		Color.grey,						// 0: Street & Path 
+		Color.red,						// 1: Residential
+		Color.yellow,					// 2: Commercial
+		Color.green						// 3: Industry
 	};
 
 
