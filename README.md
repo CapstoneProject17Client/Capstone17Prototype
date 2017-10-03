@@ -15,7 +15,11 @@ In-Main menu
 
 
 In-simulation
-- Arrow keys: move camera
+- ASWD keys: move camera
+    - A: Left
+    - W: Forward
+    - S: Back
+    - D: Right
 - Mouse moving: change camera direction
 - Reload button: reload entire scene
 - quit Button: back to main menu
