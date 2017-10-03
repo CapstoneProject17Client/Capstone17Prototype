@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 /// Functionality: start new scene, open Setting menu, and quit application
 /// Resource: https://unity3d.com/learn/tutorials/topics/user-interface-ui/creating-main-menu
 /// Author: Andrew Lam
+/// Update by: Benjamin Hao
 /// </summary>
 public class ButtonManager : MonoBehaviour {
 
@@ -30,6 +31,17 @@ public class ButtonManager : MonoBehaviour {
 //			mainMenu.gameObject.SetActive (true);
 //		}
 //	}
+
+    // go back to previous scene
+    public void backToMenu() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+	// reload the current scene
+	public void refreshScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
 	// close application
 	public void exitGameBtn() {
