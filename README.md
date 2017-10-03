@@ -8,9 +8,11 @@ City Simulator prototype project
 To contribute, fork this repo please
 
 How to play simulator prototype.
+
 In-Main menu
 - Play button: starts simulation
 - Exit: terminates simulation
+
 
 In-simulation
 - Arrow keys: move camera
