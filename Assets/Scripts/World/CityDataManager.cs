@@ -10,9 +10,8 @@ using UnityEngine;
 /// Author:
 ///	 Name: Dongwon(Shawn) Kim    Date: 2017-09-11
 /// Modified by:	
-///	 Name: Dongwon(Shawn) Kim   Change:	Start to use		 			Date: 2017-10-17
-///	 Name: Dongwon(Shawn) Kim   Change:	bug fix		 		 			Date: 2017-10-18
-///	 Name: Dongwon(Shawn) Kim   Change:	Property instead Setter/Getter 	Date: 2017-10-30
+///	 Name: Dongwon(Shawn) Kim   Change:	Start to use		 Date: 2017-10-17
+///	 Name: Dongwon(Shawn) Kim   Change:	bug fix		 		 Date: 2017-10-18
 /// Based on:  N/A
 /// </summary>
 public class CityDataManager : MonoBehaviour {

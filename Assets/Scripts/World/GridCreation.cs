@@ -32,10 +32,8 @@ public class GridCreation : MonoBehaviour {
 
 	// Reference for the CityDataManager class
 	public CityDataManager cityDataManager;
-
 	// Parent grid object to organize the object in Hierarchy
-	private GameObject parentGrid;
-
+	public GameObject parentGrid;
 
 	// Use this for initialization
 	void Start () {
@@ -55,16 +53,6 @@ public class GridCreation : MonoBehaviour {
 	 * Creates grid and put zone, coordinate
 	 **/
 	void CreateGrid(){
-
-		// temp location vector for coordinate of each cell
-		Vector3 locationVector;
-
-		// temp x,y,z floating value for coordinate of each cell
-		float loc_x, loc_y, loc_z;
-
-		// always 0
-		loc_y = 0;
-
 		size.x = cityDataManager.Size_x;
 		size.z = cityDataManager.Size_z;
 
@@ -84,16 +72,9 @@ public class GridCreation : MonoBehaviour {
 				// set color index to GridColor to color the grid
 				cellPrefab.GetComponent<GridColor> ().colorIndex = int.Parse(cellPrefab.GetChild (0).GetComponent<TextMesh> ().text);
 
-				// update temp x,z equivalent to next x,z
-				loc_x = x + (cellPrefab.localScale.x * x) * 10;
-				loc_z = z + (cellPrefab.localScale.z * z) * 10;
-
-				// update location vector
-				locationVector = new Vector3 (loc_x, loc_y, loc_z);
-
 				// creates each cell of the grid
 			 	Instantiate(cellPrefab, 
-							locationVector,
+							new Vector3(x + (cellPrefab.localScale.x * x)*10, 0, z + (cellPrefab.localScale.z * z)*10),
 							Quaternion.identity,
 							parentGrid.transform);
 				
